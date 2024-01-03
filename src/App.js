@@ -1,9 +1,15 @@
-import Categories from './components/categories/categories.component';
-import cats from './data/categories.json';
+import { Routes, Route, Outlet } from 'react-router-dom';
+
+import Home from './routes/home/home.component';
+import Navigation from './components/navigation/navigation.component';
 
 const App = () => {
   return (
-    <Categories categories={cats} />
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 
